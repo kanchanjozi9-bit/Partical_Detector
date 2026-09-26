@@ -10,38 +10,48 @@ const HEIGHT = 500;
 
 let Y = 0;
 let X = 0;
+
 const start_1_scn = 0
 const start_2_scn = WIDTH / 2
+
 const Range1 = WIDTH / 2
 const Range2 = WIDTH
+
 let X2 = Range1
 let check2 = true
+let check = true
+
 const d_width = 30;
 const d_hieght = HEIGHT
 
-let check = true
+
 const Blue_x = WIDTH / 2;
 const Blue_width = 100;
+
 let color = r.WHITE
 let color2 = r.WHITE
 
 const Blue_2_x = Blue_x / 2
 const Blue_2_width = 40
 
+let XV = 0
+let YV = 0
+
+let height = 30
+const width = WIDTH
+
+let color3 = r.WHITE
+let check3 = true
+
+let Range3 = HEIGHT
+const part_height = 30
+const partY = HEIGHT / 2
 
 function setup() {
   r.InitWindow(WIDTH, HEIGHT, "Partical Detector")
   r.SetTargetFPS(60)
 }
-let XV = 0
-let YV = 0
-let height = 30
-const width = WIDTH
-let color3 = r.WHITE
-let check3 = true
-let Range3 = HEIGHT
-const part_height = 30
-const partY = HEIGHT / 2
+
 function update() {
 
   X = space.move_Detector(X, Range1, d_width, check, start_1_scn)
@@ -72,6 +82,7 @@ function drawBlue_2() {
 function drawV_part() {
   r.DrawRectangle(0, partY, width, part_height, r.SKYBLUE)
 }
+
 function draw() {
 
   r.BeginDrawing();
