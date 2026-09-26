@@ -15,6 +15,7 @@ let d_hieght = HEIGHT
 
 let check = true
 
+
 function setup() {
   r.InitWindow(WIDTH, HEIGHT, "Partical Detector")
   r.SetTargetFPS(60)
@@ -36,15 +37,29 @@ function move_Detector() {
   }
 }
 
+const Blue_x = WIDTH / 2;
+const Blue_width = 100;
+let color = r.WHITE
 
+function detecting_partical() {
+  if (X + d_width >= Blue_x) {
+    color = r.RED
+    if (X > Blue_x + Blue_width) {
+      color = r.WHITE
+    }
+  }
+}
 
 
 function update() {
   move_Detector()
+  detecting_partical()
 }
 
+
 function drawBlue() {
-  r.DrawRectangle(WIDTH / 2, 0, 100, HEIGHT, r.SKYBLUE)
+  //step2
+  r.DrawRectangle(Blue_x, 0, Blue_width, HEIGHT, r.SKYBLUE)
 }
 
 function draw() {
