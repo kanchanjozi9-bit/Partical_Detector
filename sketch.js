@@ -14,6 +14,9 @@ let d_width = 50;
 let d_hieght = HEIGHT
 
 let check = true
+const Blue_x = WIDTH / 2;
+const Blue_width = 100;
+let color = r.WHITE
 
 
 function setup() {
@@ -25,29 +28,28 @@ function move_Detector() {
   //step 1
   if (check === true) {
     if (X < WIDTH - d_width) {
-      X += 5
+      X += 3
     } else check = false
   }
   if (check === false) {
     if (X >= 0) {
-      X -= 5
+      X -= 3
     } else {
       check = true
     }
   }
 }
 
-const Blue_x = WIDTH / 2;
-const Blue_width = 100;
-let color = r.WHITE
+
 
 function detecting_partical() {
-  if (X + d_width >= Blue_x) {
+  //step 3
+  if (X + d_width >= Blue_x && X <= Blue_width + Blue_x) {
     color = r.RED
-    if (X > Blue_x + Blue_width) {
-      color = r.WHITE
-    }
+  } else {
+    color = r.WHITE
   }
+
 }
 
 
@@ -67,7 +69,7 @@ function draw() {
   r.BeginDrawing();
   r.ClearBackground(r.BLACK)
   drawBlue()
-  r.DrawRectangle(X, Y, d_width, d_hieght, r.WHITE)
+  r.DrawRectangle(X, Y, d_width, d_hieght, color)
 
   r.EndDrawing();
 
