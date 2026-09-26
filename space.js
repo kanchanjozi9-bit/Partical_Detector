@@ -1,7 +1,7 @@
 const r = require("raylib")
 let check_fun
 function move_Detector(X, Range, d_width, check, start) {
-    //step 1
+
     let Xx = X;
     let Range_fun = Range;
     let d_width_fun = d_width
