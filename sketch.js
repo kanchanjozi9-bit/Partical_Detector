@@ -78,6 +78,7 @@ function draw() {
   drawBlue()
   drawBlue_2()
   r.DrawRectangle(X, Y, d_width, d_hieght, color)
+  r.DrawRectangle(X, Y, d_width, d_hieght, color)
 
   r.EndDrawing();
 
