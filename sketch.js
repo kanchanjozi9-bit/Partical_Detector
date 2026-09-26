@@ -10,7 +10,7 @@ const HEIGHT = 500;
 
 let Y = 0;
 let X = 0;
-let d_width = 100;
+let d_width = 50;
 let d_hieght = HEIGHT
 
 let check = true
@@ -44,7 +44,7 @@ function update() {
 }
 
 function drawBlue() {
-  r.DrawRectangle(0, HEIGHT / 2, 100, HEIGHT, r.SKYBLUE)
+  r.DrawRectangle(WIDTH / 2, 0, 100, HEIGHT, r.SKYBLUE)
 }
 
 function draw() {
