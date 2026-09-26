@@ -19,7 +19,9 @@ function setup() {
   r.InitWindow(WIDTH, HEIGHT, "Partical Detector")
   r.SetTargetFPS(60)
 }
+
 function move_Detector() {
+  //step 1
   if (check === true) {
     if (X < WIDTH - d_width) {
       X += 5
@@ -35,16 +37,21 @@ function move_Detector() {
 }
 
 
+
+
 function update() {
   move_Detector()
 }
 
+function drawBlue() {
+  r.DrawRectangle(0, HEIGHT / 2, 100, HEIGHT, r.SKYBLUE)
+}
 
 function draw() {
 
   r.BeginDrawing();
   r.ClearBackground(r.BLACK)
-
+  drawBlue()
   r.DrawRectangle(X, Y, d_width, d_hieght, r.WHITE)
 
   r.EndDrawing();
