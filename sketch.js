@@ -16,13 +16,13 @@ let scan_1_y = 0;
 let scan_1_X = 0;
 const scan_1_start = 0
 const scan_1_end = window_WIDTH / 2
-let check = true
+let scan_1_at_end = false
 let scan_1_color = r.WHITE
 
 const scan_2_start = window_WIDTH / 2
 let scan_2_X = scan_2_start
 const scan_2_end = window_WIDTH
-let check2 = true
+let scan_2_at_end = false
 let scan_2_color = r.WHITE
 
 let scan_3_X = 0
@@ -30,7 +30,7 @@ let scan_3_Y = 0
 let scan_3_height = 30
 const scan_3_width = window_WIDTH
 let scan_3_color = r.WHITE
-let check3 = true
+let check3 = false
 let scan_3_end = window_HEIGHT
 
 //Particals----------------------->>
@@ -50,14 +50,14 @@ function setup() {
 }
 
 function scanner_1() {
-  scan_1_X = space.move_Detector(scan_1_X, scan_1_end, scan_width, check, scan_1_start)
-  check = space.check()
+  scan_1_X = space.move_Detector(scan_1_X, scan_1_end, scan_width, scan_1_at_end, scan_1_start)
+  scan_1_at_end = space.check()
   scan_1_color = space.detecting_partical(scan_1_X, scan_width, pt_1_x, pt_1_width, scan_1_color)
 }
 
 function scanner_2() {
-  scan_2_X = space.move_Detector(scan_2_X, scan_2_end, scan_width, check2, scan_2_start)
-  check2 = space.check()
+  scan_2_X = space.move_Detector(scan_2_X, scan_2_end, scan_width, scan_2_at_end, scan_2_start)
+  scan_2_at_end = space.check()
   scan_2_color = space.detecting_partical(scan_2_X, scan_width, pt_2_X, pt_2_width, scan_2_color)
 }
 
