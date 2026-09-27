@@ -71,9 +71,9 @@ function draw_scanner() {
 }
 
 function draw_particals() {
-  r.DrawRectangle(pt_2_X, 0, pt_2_width, window_HEIGHT, r.SKYBLUE)
-  r.DrawRectangle(pt_1_x, 0, pt_1_width, window_HEIGHT, r.SKYBLUE)
-  r.DrawRectangle(0, pt_3_Y, scan_3_width, pt_3_height, r.SKYBLUE)
+  r.DrawRectangle(pt_2_X, scan_1_y, pt_2_width, window_HEIGHT, r.SKYBLUE)
+  r.DrawRectangle(pt_1_x, scan_1_y, pt_1_width, window_HEIGHT, r.SKYBLUE)
+  r.DrawRectangle(scan_3_X, pt_3_Y, scan_3_width, pt_3_height, r.SKYBLUE)
 }
 
 function draw() {
