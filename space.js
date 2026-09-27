@@ -25,7 +25,7 @@ function check() {
 function detecting_partical(quardinate, scaner_width, partical_quardinate, patrical_width, color) {
     //step 3
     if (quardinate + scaner_width >= partical_quardinate && quardinate <= partical_quardinate + patrical_width) {
-        color = r.RED
+        color = r.SKYBLUE
     } else {
         color = r.WHITE
     }

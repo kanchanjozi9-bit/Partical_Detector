@@ -46,35 +46,31 @@ const pt_3_Y = window_HEIGHT / 2
 function setup() {
   r.InitWindow(window_WIDTH, window_HEIGHT, "Partical Detector")
   r.SetTargetFPS(60)
+  r.SetTraceLogLevel(r.LOG_NONE);
 }
 
 function scanner_1() {
-
   scan_1_X = space.move_Detector(scan_1_X, scan_1_end, scan_width, check, scan_1_start)
   check = space.check()
   scan_1_color = space.detecting_partical(scan_1_X, scan_width, pt_1_x, pt_1_width, scan_1_color)
-
 }
-function scanner_2() {
 
+function scanner_2() {
   scan_2_X = space.move_Detector(scan_2_X, scan_2_end, scan_width, check2, scan_2_start)
   check2 = space.check()
   scan_2_color = space.detecting_partical(scan_2_X, scan_width, pt_2_X, pt_2_width, scan_2_color)
-
 }
-function scanner_3() {
 
+function scanner_3() {
   scan_3_Y = space.move_Detector(scan_3_Y, scan_3_end, scan_3_height, check3, scan_3_X)
   check3 = space.check()
   scan_3_color = space.detecting_partical(scan_3_Y, scan_3_height, pt_3_Y, pt_3_height, scan_3_color)
-
 }
-function update() {
 
+function update() {
   scanner_1()
   scanner_2()
   scanner_3()
-
 }
 function draw_scanner() {
 
@@ -86,9 +82,9 @@ function draw_scanner() {
 
 function draw_particals() {
 
-  r.DrawRectangle(pt_2_X, scan_1_y, pt_2_width, window_HEIGHT, r.SKYBLUE)
-  r.DrawRectangle(pt_1_x, scan_1_y, pt_1_width, window_HEIGHT, r.SKYBLUE)
-  r.DrawRectangle(scan_3_X, pt_3_Y, scan_3_width, pt_3_height, r.SKYBLUE)
+  r.DrawRectangle(pt_2_X, scan_1_y, pt_2_width, window_HEIGHT, r.PINK)
+  r.DrawRectangle(pt_1_x, scan_1_y, pt_1_width, window_HEIGHT, r.PINK)
+  r.DrawRectangle(scan_3_X, pt_3_Y, scan_3_width, pt_3_height, r.PINK)
 }
 
 function draw() {
