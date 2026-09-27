@@ -8,7 +8,7 @@ function running() {
 const window_WIDTH = 900;
 const window_HEIGHT = 500;
 
-//Scanners ----------->
+//Scanners ----------->>
 const scan_width = 30;
 const scan_height = window_HEIGHT
 
