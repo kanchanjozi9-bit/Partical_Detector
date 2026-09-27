@@ -1,8 +1,8 @@
 const r = require("raylib")
 let scanner_at_end
-function move_Detector(quardinate, Range_End, scaner_width, check, Range_start) {
+function move_Detector(quardinate, Range_End, scaner_width, sccaners_at_end, Range_start) {
 
-    scanner_at_end = check
+    scanner_at_end = sccaners_at_end
 
     if (!scanner_at_end) {
         if (quardinate < Range_End - scaner_width) {
