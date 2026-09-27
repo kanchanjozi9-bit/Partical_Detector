@@ -5,60 +5,60 @@ function running() {
   return !r.WindowShouldClose();
 }
 
-const window_WIDTH = 900;
-const window_HEIGHT = 500;
+const windowWIDTH = 900;
+const windowHEIGHT = 500;
 
 //Scanners ----------->>
-const scan_width = 30;
-const scan_height = window_HEIGHT
+const scanWidth = 30;
+const scanHeight = windowHEIGHT
 
 let scan_1_y = 0;
 let scan_1_X = 0;
 const scan_1_start = 0
-const scan_1_end = window_WIDTH / 2
+const scan_1_end = windowWIDTH / 2
 let scan_1_at_end = false
 let scan_1_color = r.WHITE
 
-const scan_2_start = window_WIDTH / 2
+const scan_2_start = windowWIDTH / 2
 let scan_2_X = scan_2_start
-const scan_2_end = window_WIDTH
+const scan_2_end = windowWIDTH
 let scan_2_at_end = false
 let scan_2_color = r.WHITE
 
 let scan_3_X = 0
 let scan_3_Y = 0
 let scan_3_height = 30
-const scan_3_width = window_WIDTH
+const scan_3_width = windowWIDTH
 let scan_3_color = r.WHITE
 let check3 = false
-let scan_3_end = window_HEIGHT
+let scan_3_end = windowHEIGHT
 
 //Particals----------------------->>
-const pt_2_X = window_WIDTH / 2;
+const pt_2_X = windowWIDTH / 2;
 const pt_2_width = 100;
 
 const pt_1_x = pt_2_X / 2
 const pt_1_width = 40
 
 const pt_3_height = 30
-const pt_3_Y = window_HEIGHT / 2
+const pt_3_Y = windowHEIGHT / 2
 
 function setup() {
-  r.InitWindow(window_WIDTH, window_HEIGHT, "Partical Detector")
+  r.InitWindow(windowWIDTH, windowHEIGHT, "Partical Detector")
   r.SetTargetFPS(60)
   r.SetTraceLogLevel(r.LOG_NONE);
 }
 
 function scanner_1() {
-  scan_1_X = space.move_Detector(scan_1_X, scan_1_end, scan_width, scan_1_at_end, scan_1_start)
+  scan_1_X = space.move_Detector(scan_1_X, scan_1_end, scanWidth, scan_1_at_end, scan_1_start)
   scan_1_at_end = space.check()
-  scan_1_color = space.detecting_partical(scan_1_X, scan_width, pt_1_x, pt_1_width, scan_1_color)
+  scan_1_color = space.detecting_partical(scan_1_X, scanWidth, pt_1_x, pt_1_width, scan_1_color)
 }
 
 function scanner_2() {
-  scan_2_X = space.move_Detector(scan_2_X, scan_2_end, scan_width, scan_2_at_end, scan_2_start)
+  scan_2_X = space.move_Detector(scan_2_X, scan_2_end, scanWidth, scan_2_at_end, scan_2_start)
   scan_2_at_end = space.check()
-  scan_2_color = space.detecting_partical(scan_2_X, scan_width, pt_2_X, pt_2_width, scan_2_color)
+  scan_2_color = space.detecting_partical(scan_2_X, scanWidth, pt_2_X, pt_2_width, scan_2_color)
 }
 
 function scanner_3() {
@@ -74,16 +74,16 @@ function update() {
 }
 function draw_scanner() {
 
-  r.DrawRectangle(scan_1_X, scan_1_y, scan_width, scan_height, scan_1_color)
-  r.DrawRectangle(scan_2_X, scan_1_y, scan_width, scan_height, scan_2_color)
+  r.DrawRectangle(scan_1_X, scan_1_y, scanWidth, scanHeight, scan_1_color)
+  r.DrawRectangle(scan_2_X, scan_1_y, scanWidth, scanHeight, scan_2_color)
   r.DrawRectangle(scan_3_X, scan_3_Y, scan_3_width, scan_3_height, scan_3_color)
 
 }
 
 function draw_particals() {
 
-  r.DrawRectangle(pt_2_X, scan_1_y, pt_2_width, window_HEIGHT, r.PINK)
-  r.DrawRectangle(pt_1_x, scan_1_y, pt_1_width, window_HEIGHT, r.PINK)
+  r.DrawRectangle(pt_2_X, scan_1_y, pt_2_width, windowHEIGHT, r.PINK)
+  r.DrawRectangle(pt_1_x, scan_1_y, pt_1_width, windowHEIGHT, r.PINK)
   r.DrawRectangle(scan_3_X, pt_3_Y, scan_3_width, pt_3_height, r.PINK)
 }
 

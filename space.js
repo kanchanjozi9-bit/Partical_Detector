@@ -1,19 +1,19 @@
 const r = require("raylib")
-let scanner_at_end
-function move_Detector(quardinate, Range_End, scaner_width, sccaners_at_end, Range_start) {
+let scannerAtEnd
+function move_Detector(quardinate, RangeEnd, scaneWidth, sccanersAtEnd, RangeStart) {
 
-    scanner_at_end = sccaners_at_end
+    scannerAtEnd = sccanersAtEnd
 
-    if (!scanner_at_end) {
-        if (quardinate < Range_End - scaner_width) {
+    if (!scannerAtEnd) {
+        if (quardinate < RangeEnd - scaneWidth) {
             quardinate += 3
-        } else scanner_at_end = true
+        } else scannerAtEnd = true
     }
-    if (scanner_at_end) {
-        if (quardinate >= Range_start) {
+    if (scannerAtEnd) {
+        if (quardinate >= RangeStart) {
             quardinate -= 3
         } else {
-            scanner_at_end = false
+            scannerAtEnd = false
         }
     }
 
@@ -22,7 +22,7 @@ function move_Detector(quardinate, Range_End, scaner_width, sccaners_at_end, Ran
 }
 
 function check() {
-    return scanner_at_end
+    return scannerAtEnd
 }
 
 function detecting_partical(quardinate, scaner_width, partical_quardinate, patrical_width, color) {
