@@ -63,18 +63,16 @@ function update() {
   scan_3_color = space.detecting_partical(scan_3_Y, scan_3_height, pt_3_Y, pt_3_height, scan_3_color)
 
 }
+function draw_scanner() {
+  r.DrawRectangle(scan_1_X, scan_1_y, scan_width, scan_height, scan_1_color)
+  r.DrawRectangle(scan_2_X, scan_1_y, scan_width, scan_height, scan_2_color)
+  r.DrawRectangle(scan_3_X, scan_3_Y, scan_3_width, scan_3_height, scan_3_color)
 
-function draw_pt_1() {
+}
 
+function draw_particals() {
   r.DrawRectangle(pt_2_X, 0, pt_2_width, window_HEIGHT, r.SKYBLUE)
-}
-
-function draw_pt_2() {
-
   r.DrawRectangle(pt_1_x, 0, pt_1_width, window_HEIGHT, r.SKYBLUE)
-}
-
-function draw_pt_3() {
   r.DrawRectangle(0, pt_3_Y, scan_3_width, pt_3_height, r.SKYBLUE)
 }
 
@@ -82,16 +80,9 @@ function draw() {
 
   r.BeginDrawing();
   r.ClearBackground(r.BLACK)
-
-  draw_pt_1()
-  draw_pt_2()
-  draw_pt_3()
-  r.DrawRectangle(scan_1_X, scan_1_y, scan_width, scan_height, scan_1_color)
-  r.DrawRectangle(scan_2_X, scan_1_y, scan_width, scan_height, scan_2_color)
-  r.DrawRectangle(scan_3_X, scan_3_Y, scan_3_width, scan_3_height, scan_3_color)
-
+  draw_particals()
+  draw_scanner()
   r.EndDrawing();
-
 }
 
 function teardown() {
