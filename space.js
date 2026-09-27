@@ -3,6 +3,7 @@ let check_fun
 function move_Detector(quardinate, Range_End, scaner_width, check, Range_start) {
 
     check_fun = check
+
     if (check_fun) {
         if (quardinate < Range_End - scaner_width) {
             quardinate += 3
